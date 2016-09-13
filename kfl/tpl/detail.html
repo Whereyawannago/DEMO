@@ -1,0 +1,21 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="detail container">
+  <div class="navbar navbar-default detailtop">
+    <a href="#/main" class="detailtext">首页</a>
+    <p class="detailtext">/</p>
+    <p class="detailtext">详情</p>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3>{{dish.name}}</h3>
+      <img class="img-responsive" ng-src="img/{{ dish.img_lg }}" alt=""/>
+      <p><b>主要原料：</b>{{ dish.material }}</p>
+      <p>{{ dish.detail }}</p>
+      <p>￥{{ dish.price }}</p>
+      <a href="#/main" class="btn btn-warning pull-right">我再看看</a>
+      <a href="#/order/{{ dish.did }}" class="btn btn-success pull-right detailbtn">我要订餐</a>
+    </div>
+
+  </div>
+</div>
+<div ng-include="'tpl/footer.html'"></div>

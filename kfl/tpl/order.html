@@ -1,0 +1,42 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="order container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form ng-hide="hasInfoShow">
+        <div class="form-group">
+          <label for="user_name" class="control-label">联系人：</label>
+          <input type="text" class="form-control" id="user_name" ng-model="order.user_name"/>
+        </div>
+        <div class="form-group">
+          <label class="control-label">性别：</label>
+
+          <div>
+            <label>
+              <input type="radio" value="1" name="sex" class="active" ng-model="order.sex"/>先生
+            </label>
+            <label>
+              <input type="radio" value="2" name="sex" ng-model="order.sex"/>女士
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="control-label">联系电话：</label>
+          <input type="text" id="phone" class="form-control" ng-model="order.phone"/>
+        </div>
+        <div class="form-group">
+          <label for="address" class="control-label">送餐地址：</label>
+          <textarea name="address" id="address" class="form-control" ng-model="order.addr"></textarea>
+        </div>
+        <button class="btn btn-success btn-block" ng-click="submitOrder()">确定下单</button>
+      </form>
+      <div class="alert alert-success" ng-show="hasInfoShow">
+        <h4>下单成功！</h4>
+
+        <p>您的订单编号为：{{order.did}}。</p>
+
+        <p>您可以在<a href="#/myorder/{{order.phone}}">我的订单</a>中查看订单</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-include="'tpl/footer.html'"></div>
